@@ -29,6 +29,7 @@ public class AdvCalc {
         }
     }
     public static void main(String[] args) {
+        System.out.println("Welcome in Advance calculator");
         System.out.println("Enter Two numbers");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
