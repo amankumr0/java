@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class DecimalBinary{
     public static void main(String[] args) {
         System.out.println("For convert into Binary select 1 \nFor convert into Decimal select 2");
@@ -15,8 +14,7 @@ public class DecimalBinary{
             case 2:
             System.out.println("Enter Binary number");
             int c = sc.nextInt();
-            int decimal = intoDecimal(c);
-            System.out.println(decimal);
+            intoDecimal(c);
             break;
             default: System.out.println("Please select a valid option");
             break;
@@ -24,11 +22,30 @@ public class DecimalBinary{
         
     }
 
-    private static int intoDecimal(int c) {
-
-        return 0;
+    private static void intoDecimal(int c) {
+        int d =0,g=0,h=0;
+        int z=c;
+        for (int i=0; i<c ;d++) {
+            c=c/10;
+            g++;
+         }
+        int []f= new int[d];
+        for (int e=0;e<d;d--) {
+           f[d-1]= z%10;
+           z=z/10;
+        }
+        h=f[0]*1;
+        for(int j=0;j<g-1;j++){
+        h=(2<<j*f[j+1])+h;
+        }
+        System.out.println(h);
     }
-//function for converting into Binary************
+
+
+
+
+
+    //function for converting into Binary************
     private static void intoBinary(int b) {
         int d =0,c=0;
         int z=b;
@@ -39,7 +56,7 @@ public class DecimalBinary{
          int []f= new int[d];
          for (int e=0;e<d;d--) {
            f[d-1]= z%2;
-           z=z/2;
+           z=z>>1;
         }
      for(int j=0;j<c;j++)  System.out.print(f[j]);
     }

@@ -1,3 +1,3 @@
- for(int z=0;z<=p;z++){
-                System.out.print("*");
-                }
+for(int i=0;i<10;i++){
+        //     mll.add(i);
+        // }
