@@ -1,13 +1,13 @@
 public class Problem_On_List {
     public static void main(String[] args) {
         MyLinkedList mll = new MyLinkedList();
-        for(int i=0;i<10;i++){
-            mll.add(i);
-        }
-       
+        mll.add(1);
+        System.out.print("Print ------ >" + "\t");
+        mll.print();
+        System.out.println("Size ----> " + mll.sizeOf());
+        System.out.println("=====================================================");
+
         mll.print();
         mll.count();
-        mll.delete(10);
-        mll.print();
     }
 }

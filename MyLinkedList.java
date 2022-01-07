@@ -2,11 +2,32 @@ public class MyLinkedList {
 
     Node head;
 
-    public void count(){
+    public void removeAtIndex(int Index){
         Node temp = head;
         int i=0;
-        while (temp.next!=null) {
+        while(i<Index-1){
             temp=temp.next;
+            i++;
+        }
+        temp.next = temp.next.next;
+
+    }
+
+    public int sizeOf() {
+        Node temp = head;
+        int siz = 0;
+        while (temp != null) {
+            temp = temp.next;
+            siz++;
+        }
+        return siz;
+    }
+
+    public void count() {
+        Node temp = head;
+        int i = 0;
+        while (temp != null) {
+            temp = temp.next;
             i++;
         }
         System.out.println(i);
@@ -24,30 +45,31 @@ public class MyLinkedList {
         }
         temp.next = toAdd;
     }
-    public void delete(int index){
-        int l=2;
+
+    public void deletePos(int pos) {
+        int l = 2;
         Node temp = head;
-        while(l<index){
-            temp= temp.next;
+        while (l < pos) {
+            temp = temp.next;
             l++;
         }
-        temp.next=temp.next.next;
+        temp.next = temp.next.next;
     }
 
     public boolean isEmpty() {
-        return head==null;
+        return head == null;
     }
 
     public void print() {
-        try{
-        Node temp = head;
-        while (temp.next != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+        try {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        } catch (NullPointerException e) {
+            System.err.print(" Please add some value");
         }
-    }catch(NullPointerException e){
-        System.err.print(" Please add some value");
-    }
         System.err.println("");
     }
 
